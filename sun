@@ -1,3 +1,339 @@
 sun
 (2,8), (3,3), (3,8), (3,13), (4,4), (4,12), (5,6~10), (6,5~11), (7,5), (7,7~8), (7,10~11), (8,2~3), (8,5), (8,7~11), (8,13~14), (9,5), (9,7~8), 
 (9,10~11), (10,5~11), (11,6~10), (12,4), (12,12), (13,3), (13,8), (13,13), (14,8)
+
+const int buzzer=6;
+
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#define PIN_CDS 26
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+
+Adafruit_SSD1306 display(SCREEN_WIDTH,SCREEN_HEIGHT,&Wire, -1);
+void setup() {
+  Serial.begin(9600);
+  pinMode(PIN_CDS,INPUT);
+  pinMode(27,INPUT);
+  pinMode(buzzer,OUTPUT);
+
+  Wire.setSDA(12);
+  Wire.setSCL(13);
+  
+  Wire.begin();
+
+  if(!display.begin(SSD1306_SWITCHCAPVCC,0x3C))
+  {
+    Serial.println(F("SSD1306 allocation failed"));
+    for(;;);
+  }
+}
+
+void loop() {
+  int CDS_sensor=analogRead(26);
+  int rain_sensor=analogRead(27);
+  
+  Serial.println(CDS_sensor);
+  Serial.print(rain_sensor);
+  delay(1000);
+
+  if(CDS_sensor<300)//맑은 날
+  {
+    delay(2000);
+    display.clearDisplay();
+    display.setTextSize(1.5);
+    display.setTextColor(WHITE);
+    display.setCursor(0,10);
+    display.println(".");
+    display.display();
+    delay(1000);
+
+
+    display.setCursor(2,8);
+    display.println(".");
+    display.display();
+    
+    display.setCursor(3,3);
+    display.println(".");
+    display.display();
+    
+    display.setCursor(3,8);
+    display.println(".");
+    display.display();
+
+    display.setCursor(3,13);
+    display.println(".");
+    display.display();
+
+    display.setCursor(4,4);
+    display.println(".");
+    display.display();
+    
+    display.setCursor(4,12);
+    display.println(".");
+    display.display();
+    
+    display.setCursor(5,6);
+    display.println(".");
+    display.display();
+    
+    display.setCursor(5,7);
+    display.println(".");
+    display.display();
+    
+    display.setCursor(5,8);
+    display.println(".");
+    display.display();
+    
+    display.setCursor(5,9);
+    display.println(".");
+    display.display();
+
+    display.setCursor(5,10);
+    display.println(".");
+    display.display();
+
+    display.setCursor(6,5);
+    display.println(".");
+    display.display();
+
+    display.setCursor(6,6);
+    display.println(".");
+    display.display();
+
+    display.setCursor(6,7);
+    display.println(".");
+    display.display();
+
+    display.setCursor(6,8);
+    display.println(".");
+    display.display();
+
+    display.setCursor(6,9);
+    display.println(".");
+    display.display();
+
+    display.setCursor(6,10);
+    display.println(".");
+    display.display();
+
+    display.setCursor(6,11);
+    display.println(".");
+    display.display();
+    
+    display.setCursor(7,5);
+    display.println(".");
+    display.display();
+    
+    display.setCursor(7,7);
+    display.println(".");
+    display.display();
+
+    display.setCursor(7,8);
+    display.println(".");
+    display.display();
+
+    display.setCursor(7,10);
+    display.println(".");
+    display.display();
+
+    display.setCursor(7,11);
+    display.println(".");
+    display.display();
+    
+    display.setCursor(8,2);
+    display.println(".");
+    display.display();
+
+    display.setCursor(8,3);
+    display.println(".");
+    display.display();
+
+    display.setCursor(8,5);
+    display.println(".");
+    display.display();
+
+    display.setCursor(8,7);
+    display.println(".");
+    display.display();
+
+    display.setCursor(8,8);
+    display.println(".");
+    display.display();
+
+    display.setCursor(8,9);
+    display.println(".");
+    display.display();
+
+    display.setCursor(8,10);
+    display.println(".");
+    display.display();
+
+    display.setCursor(8,11);
+    display.println(".");
+    display.display();
+
+    display.setCursor(8,13);
+    display.println(".");
+    display.display();
+
+    display.setCursor(8,14);
+    display.println(".");
+    display.display();
+
+     display.setCursor(9,5);
+    display.println(".");
+    display.display();
+    
+    display.setCursor(9,7);
+    display.println(".");
+    display.display();
+
+    display.setCursor(9,8);
+    display.println(".");
+    display.display();
+
+    display.setCursor(9,10);
+    display.println(".");
+    display.display();
+
+    display.setCursor(9,11);
+    display.println(".");
+    display.display();
+    
+    display.setCursor(10,5);
+    display.println(".");
+    display.display();
+
+    display.setCursor(10,6);
+    display.println(".");
+    display.display();
+
+    display.setCursor(10,7);
+    display.println(".");
+    display.display();
+
+    display.setCursor(10,8);
+    display.println(".");
+    display.display();
+
+    display.setCursor(10,9);
+    display.println(".");
+    display.display();
+
+    display.setCursor(10,10);
+    display.println(".");
+    display.display();
+
+    display.setCursor(10,11);
+    display.println(".");
+    display.display();
+
+    display.setCursor(11,6);
+    display.println(".");
+    display.display();
+
+    display.setCursor(11,7);
+    display.println(".");
+    display.display();
+
+    display.setCursor(11,8);
+    display.println(".");
+    display.display();
+
+     display.setCursor(11,9);
+    display.println(".");
+    display.display();
+
+    display.setCursor(11,10);
+    display.println(".");
+    display.display();
+
+    display.setCursor(12,4);
+    display.println(".");
+    display.display();
+
+    display.setCursor(12,12);
+    display.println(".");
+    display.display();
+
+    display.setCursor(13,3);
+    display.println(".");
+    display.display();
+
+    display.setCursor(13,8);
+    display.println(".");
+    display.display();
+
+    display.setCursor(13,13);
+    display.println(".");
+    display.display();
+
+    display.setCursor(14,8);
+    display.println(".");
+    display.display();
+
+   
+    display.setCursor(50,50);
+    display.setTextSize(1);
+    display.println("It's sunny! Put on your sunscreen!");
+    display.display();
+    delay(1000);
+  }
+  else//흐리거나 비 오는 날
+  {
+    if//빗물 적은 날. 흐린 날.
+    {
+      delay(2000);
+      display.clearDisplay();
+      display.setTextSize(1.5);
+      display.setTextColor(WHITE);
+      display.setCursor(0,10);
+      display.println(".");
+      display.display();
+      delay(1000);
+
+      display.setCursor(0,10);
+      display.println(".");
+      display.display();
+      delay(1000);
+
+      display.clearDisplay();
+      delay(1000);
+
+      display.setCursor(50,50);
+      display.setTextSize(1);
+      display.println("It's sunny! Put on your sunscreen!");
+      display.display();
+      delay(1000);
+    }
+    else//빗물 많은 날.
+    {
+      delay(2000);
+      display.clearDisplay();
+      display.setTextSize(1.5);
+      display.setTextColor(WHITE);
+      display.setCursor(0,10);
+      display.println(".");
+      display.display();
+      delay(1000);
+
+      display.setCursor(0,10);
+      display.println(".");
+      display.display();
+      delay(1000);
+
+      display.clearDisplay();
+      delay(1000);
+
+      display.setCursor(50,50);
+      display.setTextSize(1);
+      display.println("It's sunny! Put on your sunscreen!");
+      display.display();
+      delay(1000);
+    }
+    delay(1000);
+  }  
+}
