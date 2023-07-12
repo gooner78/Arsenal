@@ -1,64 +1,64 @@
-     display.setCursor(10,7);
+     display.setCursor(40,28);
       display.print(".");
       display.display();
 
-      display.setCursor(10,8);
+      display.setCursor(40,32);
       display.print(".");
       display.display();
 
-      display.setCursor(10,9);
+      display.setCursor(40,36);
       display.print(".");
       display.display();
 
-      display.setCursor(10,10);
+      display.setCursor(40,40);
       display.print(".");
       display.display();
 
-      display.setCursor(10,11);
+      display.setCursor(40,44);
       display.print(".");
       display.display();
 
-      display.setCursor(11,6);
+      display.setCursor(44,24);
       display.print(".");
       display.display();
 
-      display.setCursor(11,7);
+      display.setCursor(44,28);
       display.print(".");
       display.display();
 
-      display.setCursor(11,8);
+      display.setCursor(44,32);
       display.print(".");
       display.display();
 
-      display.setCursor(11,9);
+      display.setCursor(44,36);
       display.print(".");
       display.display();
 
-      display.setCursor(11,10);
+      display.setCursor(44,40);
       display.print(".");
       display.display();
 
-      display.setCursor(12,4);
+      display.setCursor(48,16);
       display.print(".");
       display.display();
 
-      display.setCursor(12,12);
+      display.setCursor(48,48);
       display.print(".");
       display.display();
 
-      display.setCursor(13,3);
+      display.setCursor(52,12);
       display.print(".");
       display.display();
 
-      display.setCursor(13,8);
+      display.setCursor(52,32);
       display.print(".");
       display.display();
 
-      display.setCursor(13,13);
+      display.setCursor(52,52);
       display.print(".");
       display.display();
 
-      display.setCursor(14,8);
+      display.setCursor(56,32);
       display.print(".");
       display.display();
 
