@@ -1,0 +1,70 @@
+     display.setCursor(10,7);
+      display.print(".");
+      display.display();
+
+      display.setCursor(10,8);
+      display.print(".");
+      display.display();
+
+      display.setCursor(10,9);
+      display.print(".");
+      display.display();
+
+      display.setCursor(10,10);
+      display.print(".");
+      display.display();
+
+      display.setCursor(10,11);
+      display.print(".");
+      display.display();
+
+      display.setCursor(11,6);
+      display.print(".");
+      display.display();
+
+      display.setCursor(11,7);
+      display.print(".");
+      display.display();
+
+      display.setCursor(11,8);
+      display.print(".");
+      display.display();
+
+      display.setCursor(11,9);
+      display.print(".");
+      display.display();
+
+      display.setCursor(11,10);
+      display.print(".");
+      display.display();
+
+      display.setCursor(12,4);
+      display.print(".");
+      display.display();
+
+      display.setCursor(12,12);
+      display.print(".");
+      display.display();
+
+      display.setCursor(13,3);
+      display.print(".");
+      display.display();
+
+      display.setCursor(13,8);
+      display.print(".");
+      display.display();
+
+      display.setCursor(13,13);
+      display.print(".");
+      display.display();
+
+      display.setCursor(14,8);
+      display.print(".");
+      display.display();
+
+   
+      display.setCursor(30,20);
+      display.setTextSize(1);
+      display.println("It's sunny! Put on your sunscreen!");
+      display.display();
+      delay(1000);
