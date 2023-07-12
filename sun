@@ -47,259 +47,265 @@ void loop() {
   Serial.print(rain_sensor);
   delay(1000);
 
-  unsigned long past=;//빗물 감지되기 시작한 시점
-  int flag=0;
+ // unsigned long past=;//빗물 감지되기 시작한 시점
+  int flag=1;
 
   if(CDS_sensor<300)//맑은 날
   {
     unsigned long now=millis();//빗물 감지되는 마지막 시점
-    if(now-past < 60000)//맑고 빗물 감지 1분 이하//rain_sensor>900
+   /* if(now-past < 60000)//맑고 빗물 감지 1분 이하//rain_sensor>900
     {
       flag=1;
-    }
+    }*/
 
     if(flag==1)
     {
       display.clearDisplay();
-      display.setTextSize(1.5);
+      display.setTextSize(1);
       display.setTextColor(WHITE);
 
 
-      display.setCursor(2,8);
+      display.setCursor(8,32);
       display.print(".");
       display.display();
     
-      display.setCursor(3,3);
-      display.print(".");
-      display.display();
-    
-      display.setCursor(3,8);
-      display.print(".");
-      display.display();
-
-      display.setCursor(3,13);
-      display.print(".");
-      display.display();
-
-      display.setCursor(4,4);
-      display.print(".");
-      display.display();
-    
-      display.setCursor(4,12);
-      display.print(".");
-      display.display();
-    
-      display.setCursor(5,6);
-      display.print(".");
-      display.display();
-    
-      display.setCursor(5,7);
-      display.print(".");
-      display.display();
-    
-      display.setCursor(5,8);
-      display.print(".");
-      display.display();
-    
-      display.setCursor(5,9);
-      display.print(".");
-      display.display();
-
-      display.setCursor(5,10);
-      display.print(".");
-      display.display();
-
-      display.setCursor(6,5);
-      display.print(".");
-      display.display();
-
-      display.setCursor(6,6);
-      display.print(".");
-      display.display();
-
-      display.setCursor(6,7);
-      display.print(".");
-      display.display();
-
-      display.setCursor(6,8);
-      display.print(".");
-      display.display();
-
-      display.setCursor(6,9);
-      display.print(".");
-      display.display();
-
-      display.setCursor(6,10);
-      display.print(".");
-      display.display();
-
-      display.setCursor(6,11);
-      display.print(".");
-      display.display();
-    
-      display.setCursor(7,5);
-      display.print(".");
-      display.display();
-    
-      display.setCursor(7,7);
-      display.print(".");
-      display.display();
-
-      display.setCursor(7,8);
-      display.print(".");
-      display.display();
-
-      display.setCursor(7,10);
-      display.print(".");
-      display.display();
-
-      display.setCursor(7,11);
-      display.print(".");
-      display.display();
-    
-      display.setCursor(8,2);
-      display.print(".");
-      display.display();
-
-      display.setCursor(8,3);
-      display.print(".");
-      display.display();
-
-      display.setCursor(8,5);
-      display.print(".");
-      display.display();
-
-      display.setCursor(8,7);
-      display.print(".");
-      display.display();
-
-      display.setCursor(8,8);
-      display.print(".");
-      display.display();
-
-      display.setCursor(8,9);
-      display.print(".");
-      display.display();
-
-      display.setCursor(8,10);
-      display.print(".");
-      display.display();
-
-      display.setCursor(8,11);
-      display.print(".");
-      display.display();
-
-      display.setCursor(8,13);
-      display.print(".");
-      display.display();
-
-      display.setCursor(8,14);
-      display.print(".");
-      display.display();
-
-      display.setCursor(9,5);
-      display.print(".");
-      display.display();
-    
-      display.setCursor(9,7);
-      display.print(".");
-      display.display();
-
-      display.setCursor(9,8);
-      display.print(".");
-      display.display();
-
-      display.setCursor(9,10);
-      display.print(".");
-      display.display();
-
-      display.setCursor(9,11);
-      display.print(".");
-      display.display();
-    
-      display.setCursor(10,5);
-      display.print(".");
-      display.display();
-
-      display.setCursor(10,6);
-      display.print(".");
-      display.display();
-
-      display.setCursor(10,7);
-      display.print(".");
-      display.display();
-
-      display.setCursor(10,8);
-      display.print(".");
-      display.display();
-
-      display.setCursor(10,9);
-      display.print(".");
-      display.display();
-
-      display.setCursor(10,10);
-      display.print(".");
-      display.display();
-
-      display.setCursor(10,11);
-      display.print(".");
-      display.display();
-
-      display.setCursor(11,6);
-      display.print(".");
-      display.display();
-
-      display.setCursor(11,7);
-      display.print(".");
-      display.display();
-
-      display.setCursor(11,8);
-      display.print(".");
-      display.display();
-
-      display.setCursor(11,9);
-      display.print(".");
-      display.display();
-
-      display.setCursor(11,10);
-      display.print(".");
-      display.display();
-
-      display.setCursor(12,4);
-      display.print(".");
-      display.display();
-
       display.setCursor(12,12);
       display.print(".");
       display.display();
-
-      display.setCursor(13,3);
+    
+      display.setCursor(12,32);
       display.print(".");
       display.display();
 
-      display.setCursor(13,8);
+      display.setCursor(12,52);
       display.print(".");
       display.display();
 
-      display.setCursor(13,13);
+      display.setCursor(16,16);
+      display.print(".");
+      display.display();
+    
+      display.setCursor(16,48);
+      display.print(".");
+      display.display();
+    
+      display.setCursor(20,24);
+      display.print(".");
+      display.display();
+    
+      display.setCursor(20,28);
+      display.print(".");
+      display.display();
+    
+      display.setCursor(20,32);
+      display.print(".");
+      display.display();
+    
+      display.setCursor(20,36);
       display.print(".");
       display.display();
 
-      display.setCursor(14,8);
+      display.setCursor(20,40);
+      display.print(".");
+      display.display();
+
+      display.setCursor(24,20);
+      display.print(".");
+      display.display();
+
+      display.setCursor(24,24);
+      display.print(".");
+      display.display();
+
+      display.setCursor(24,28);
+      display.print(".");
+      display.display();
+
+      display.setCursor(24,32);
+      display.print(".");
+      display.display();
+
+      display.setCursor(24,36);
+      display.print(".");
+      display.display();
+
+      display.setCursor(24,40);
+      display.print(".");
+      display.display();
+
+      display.setCursor(24,44);
+      display.print(".");
+      display.display();
+    
+      display.setCursor(28,20);
+      display.print(".");
+      display.display();
+    
+      display.setCursor(28,28);
+      display.print(".");
+      display.display();
+
+      display.setCursor(28,32);
+      display.print(".");
+      display.display();
+
+      display.setCursor(28,40);
+      display.print(".");
+      display.display();
+
+      display.setCursor(28,44);
+      display.print(".");
+      display.display();
+    
+      display.setCursor(32,8);
+      display.print(".");
+      display.display();
+
+      display.setCursor(32,12);
+      display.print(".");
+      display.display();
+
+      display.setCursor(32,20);
+      display.print(".");
+      display.display();
+
+      display.setCursor(32,28);
+      display.print(".");
+      display.display();
+
+      display.setCursor(32,32);
+      display.print(".");
+      display.display();
+
+      display.setCursor(32,24);
+      display.print(".");
+      display.display();
+
+      display.setCursor(32,40);
+      display.print(".");
+      display.display();
+
+      display.setCursor(32,44);
+      display.print(".");
+      display.display();
+
+      display.setCursor(32,52);
+      display.print(".");
+      display.display();
+
+      display.setCursor(32,56);
+      display.print(".");
+      display.display();
+
+      display.setCursor(36,20);
+      display.print(".");
+      display.display();
+    
+      display.setCursor(36,28);
+      display.print(".");
+      display.display();
+
+      display.setCursor(36,32);
+      display.print(".");
+      display.display();
+
+      display.setCursor(36,40);
+      display.print(".");
+      display.display();
+
+      display.setCursor(36,44);
+      display.print(".");
+      display.display();
+    
+      display.setCursor(40,20);
+      display.print(".");
+      display.display();
+
+      display.setCursor(40,24);
+      display.print(".");
+      display.display();
+      
+       display.setCursor(40,28);
+      display.print(".");
+      display.display();
+
+      display.setCursor(40,32);
+      display.print(".");
+      display.display();
+
+      display.setCursor(40,36);
+      display.print(".");
+      display.display();
+
+      display.setCursor(40,40);
+      display.print(".");
+      display.display();
+
+      display.setCursor(40,44);
+      display.print(".");
+      display.display();
+
+      display.setCursor(44,24);
+      display.print(".");
+      display.display();
+
+      display.setCursor(44,28);
+      display.print(".");
+      display.display();
+
+      display.setCursor(44,32);
+      display.print(".");
+      display.display();
+
+      display.setCursor(44,36);
+      display.print(".");
+      display.display();
+
+      display.setCursor(44,40);
+      display.print(".");
+      display.display();
+
+      display.setCursor(48,16);
+      display.print(".");
+      display.display();
+
+      display.setCursor(48,48);
+      display.print(".");
+      display.display();
+
+      display.setCursor(52,12);
+      display.print(".");
+      display.display();
+
+      display.setCursor(52,32);
+      display.print(".");
+      display.display();
+
+      display.setCursor(52,52);
+      display.print(".");
+      display.display();
+
+      display.setCursor(56,32);
       display.print(".");
       display.display();
 
    
-      display.setCursor(25,25);
+      display.setCursor(61,15);
       display.setTextSize(1);
-      display.println("It's sunny! Put on your sunscreen!");
+      display.println("It's sunny!");
+      display.setCursor(61,30);
+      display.setTextSize(1);
+      display.println("Put on your");
+      display.setCursor(61,45);
+      display.setTextSize(1);
+      display.println("sunscreen!");
       display.display();
       delay(1000);
     }
     else//1분 이상 빗물 감지(맑은데 물뿌리개로 장난)
     {
       display.clearDisplay();
-      display.setCursor(50,50);
+      display.setCursor(55,55);
       display.setTextSize(1);
       display.setTextColor(WHITE);
       display.println("");
