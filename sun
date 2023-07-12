@@ -52,26 +52,18 @@ void loop() {
 
   if(CDS_sensor<300)//맑은 날
   {
-    unsigned long now=millis();//빗물 감지되는 마지막 시점
-   /* if(now-past < 60000)//맑고 빗물 감지 1분 이하//rain_sensor>900
-    {
-      flag=1;
-    }*/
-
-    if(flag==1)
-    {
-      display.clearDisplay();
-      display.setTextSize(1);
-      display.setTextColor(WHITE);
+    display.clearDisplay();
+    display.setTextSize(1);
+    display.setTextColor(WHITE);
 
 
-      display.setCursor(8,32);
-      display.print(".");
-      display.display();
+    display.setCursor(8,32);
+    display.print(".");
+    display.display();
     
-      display.setCursor(12,12);
-      display.print(".");
-      display.display();
+    display.setCursor(12,12);
+    display.print(".");
+    display.display();
     
       display.setCursor(12,32);
       display.print(".");
@@ -302,16 +294,7 @@ void loop() {
       display.display();
       delay(1000);
     }
-    else//1분 이상 빗물 감지(맑은데 물뿌리개로 장난)
-    {
-      display.clearDisplay();
-      display.setCursor(55,55);
-      display.setTextSize(1);
-      display.setTextColor(WHITE);
-      display.println("");
-      display.display();
-      delay(1000);
-    }
+
     
   }
   else//흐리거나 비 오는 날
@@ -319,12 +302,8 @@ void loop() {
     if(rain_sensor>900)//빗물 적은 날. 흐린 날.
     {
       display.clearDisplay();
-      display.setTextSize(1.5);
+      display.setTextSize(1);
       display.setTextColor(WHITE);
-      display.setCursor(0,10);
-      display.print(".");
-      display.display();
-      delay(1000);
 
       display.clearDisplay();
       delay(1000);
@@ -337,26 +316,27 @@ void loop() {
     }
     else//빗물 많은 날.
     {
-      delay(2000);
       display.clearDisplay();
-      display.setTextSize(1.5);
-      display.setTextColor(WHITE);
-      display.setCursor(0,10);
-      display.println(".");
-      display.display();
-      delay(1000);
-
-      display.setCursor(0,10);
-      display.println(".");
-      display.display();
-      delay(1000);
-
-      display.clearDisplay();
-      delay(1000);
-
-      display.setCursor(25,25);
       display.setTextSize(1);
-      display.println("It's raining! Take an umbrella when you go out!");
+      display.setTextColor(WHITE);
+
+      display.setCursor(0,10);
+      display.println(".");
+      display.display();
+      delay(1000);
+
+      display.clearDisplay();
+      delay(1000);
+
+      display.setCursor(61,15);
+      display.setTextSize(1);
+      display.println("It's raining!");
+      display.setCursor(61,30);
+      display.setTextSize(1);
+      display.println("Take an umbrella");
+      display.setCursor(61,45);
+      display.setTextSize(1);
+      display.println("when you go out!");
       display.display();
       delay(1000);
     }
