@@ -7,6 +7,7 @@
 #define SCREEN_HEIGHT 64
 
 Adafruit_SSD1306 display(SCREEN_WIDTH,SCREEN_HEIGHT,&Wire, -1);
+
 void setup() {
   Serial.begin(9600);
   pinMode(PIN_CDS,INPUT);
@@ -513,6 +514,7 @@ void loop() {
       display.setTextSize(1);
       display.println("Cloudy day");
       display.display();
+
       delay(3000);
     }
     else//빗물 많은 날.
@@ -889,14 +891,17 @@ void loop() {
       display.setTextSize(1);
       display.println("Rainy day!");
       display.display();
+
       display.setCursor(61,30);
       display.setTextSize(1);
       display.println("Take an");
       display.display();
+
       display.setCursor(61,45);
       display.setTextSize(1);
       display.println("umbrella");
       display.display();
+
       delay(3000);
     }
   }  
